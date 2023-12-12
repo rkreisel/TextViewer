@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextViewer", "TextViewer\TextViewer.csproj", "{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DF565BD-6771-4F9C-94F0-1834EE7EFB8F}
+	EndGlobalSection
+EndGlobal
