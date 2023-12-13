@@ -11,7 +11,16 @@
     <Description>A simple popup text file viewer in a Nuget package.</Description>
     <Copyright>House on the Rock Software 2023</Copyright>
     <PackageProjectUrl>https://github.com/rkreisel/TextViewer</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/rkreisel/TextViewer.git</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="InputDialog" Version="1.2.8" />

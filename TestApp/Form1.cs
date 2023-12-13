@@ -14,11 +14,14 @@ namespace TestApp
             viewer.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnViewFile_Click(object sender, EventArgs e)
         {
-            var viewer = new Viewer.Viewer("Viewer2");
-            viewer.LoadFile(@"D:\Projects\TextViewer\TestApp\TestFiles\ImageCataloger-20231204.log");
-            viewer.Show();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                var viewer = new Viewer.Viewer("Viewer2");
+                viewer.LoadFile(ofd.FileName);
+                viewer.Show();
+            }
         }
     }
 }

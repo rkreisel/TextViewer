@@ -28,45 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnClickMe = new Button();
-            button1 = new Button();
+            btnViewFile = new Button();
+            ofd = new OpenFileDialog();
+            tt = new ToolTip(components);
             SuspendLayout();
             // 
             // btnClickMe
             // 
-            btnClickMe.Location = new Point(0, 0);
+            btnClickMe.Location = new Point(44, 12);
             btnClickMe.Name = "btnClickMe";
             btnClickMe.Size = new Size(138, 23);
             btnClickMe.TabIndex = 0;
             btnClickMe.Text = "View Static Text";
+            tt.SetToolTip(btnClickMe, "Pass predetermined text to viewer");
             btnClickMe.UseVisualStyleBackColor = true;
             btnClickMe.Click += btnClickMe_Click;
             // 
-            // button1
+            // btnViewFile
             // 
-            button1.Location = new Point(0, 29);
-            button1.Name = "button1";
-            button1.Size = new Size(138, 23);
-            button1.TabIndex = 1;
-            button1.Text = "View FIle";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnViewFile.Location = new Point(44, 41);
+            btnViewFile.Name = "btnViewFile";
+            btnViewFile.Size = new Size(138, 23);
+            btnViewFile.TabIndex = 1;
+            btnViewFile.Text = "View FIle";
+            tt.SetToolTip(btnViewFile, "Open file dialog to select a file");
+            btnViewFile.UseVisualStyleBackColor = true;
+            btnViewFile.Click += btnViewFile_Click;
+            // 
+            // ofd
+            // 
+            ofd.DefaultExt = "txt";
+            ofd.Filter = "Text Files|*.txt|Rich Text Files|*.rtf|All FIles|*.*";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(215, 74);
+            Controls.Add(btnViewFile);
             Controls.Add(btnClickMe);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
-            Text = "Form1";
+            SizeGripStyle = SizeGripStyle.Hide;
+            Text = "Viewer";
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnClickMe;
-        private Button button1;
+        private Button btnViewFile;
+        private OpenFileDialog ofd;
+        private ToolTip tt;
     }
 }

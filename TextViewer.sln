@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextViewer", "TextViewer\TextViewer.csproj", "{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextViewer", "TextViewer\TextViewer.csproj", "{87EF2410-1B3A-4FCC-B1F4-81765E2DD74D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{539C8B02-080E-4AC9-BCA1-4EF1C41B56CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E383050B-F40B-49BF-A824-1D48BDC5091F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
