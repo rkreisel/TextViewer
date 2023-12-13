@@ -58,6 +58,7 @@ partial class Viewer
         splitContainer1.Panel1.Controls.Add(btnSearch);
         splitContainer1.Panel1.Controls.Add(chkWordWrap);
         splitContainer1.Panel1.Cursor = Cursors.Default;
+        splitContainer1.Panel1.Padding = new Padding(0, 3, 0, 0);
         // 
         // splitContainer1.Panel2
         // 
@@ -69,9 +70,10 @@ partial class Viewer
         // btnSearch
         // 
         btnSearch.Dock = DockStyle.Right;
-        btnSearch.Location = new Point(725, 0);
+        btnSearch.FlatStyle = FlatStyle.System;
+        btnSearch.Location = new Point(725, 3);
         btnSearch.Name = "btnSearch";
-        btnSearch.Size = new Size(75, 25);
+        btnSearch.Size = new Size(75, 22);
         btnSearch.TabIndex = 1;
         btnSearch.Text = "&Search";
         tt.SetToolTip(btnSearch, "F3 or CTRL-F to find next");
@@ -82,10 +84,10 @@ partial class Viewer
         // 
         chkWordWrap.AutoSize = true;
         chkWordWrap.Dock = DockStyle.Left;
-        chkWordWrap.Location = new Point(0, 0);
+        chkWordWrap.Location = new Point(0, 3);
         chkWordWrap.Name = "chkWordWrap";
         chkWordWrap.Padding = new Padding(4, 0, 0, 0);
-        chkWordWrap.Size = new Size(90, 25);
+        chkWordWrap.Size = new Size(90, 22);
         chkWordWrap.TabIndex = 0;
         chkWordWrap.Text = "Word Wrap";
         chkWordWrap.UseVisualStyleBackColor = true;

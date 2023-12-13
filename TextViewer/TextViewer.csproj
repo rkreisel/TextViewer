@@ -5,6 +5,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Text File Viewer popup window</Title>
+    <Company>House on the Rock Software</Company>
+    <Description>A simple popup text file viewer in a Nuget package.</Description>
+    <Copyright>House on the Rock Software 2023</Copyright>
+    <PackageProjectUrl>https://github.com/rkreisel/TextViewer</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

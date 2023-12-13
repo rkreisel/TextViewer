@@ -12,4 +12,8 @@
     <ProjectReference Include="..\TextViewer\TextViewer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TestFiles\" />
+  </ItemGroup>
+
 </Project>

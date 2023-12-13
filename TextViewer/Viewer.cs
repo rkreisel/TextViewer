@@ -22,17 +22,52 @@ public partial class Viewer : Form
     private string _searchFileSource;
     private string _srchName;
 
-    public Viewer(string srchName = null)
+    public Viewer(string srchName = "TxtVwrSrchHst")
     {
         InitializeComponent();
-        _srchName = srchName ?? "srchForm";
+        _srchName = srchName;
         LoadPriorSearches();
+    }
+
+    public void LoadText(string text)
+    {
+        rtbContent.WordWrap = chkWordWrap.Checked = true;
+        rtbContent.Lines = new string[] { text };
+        ApplyPadding(5);
     }
 
     public void LoadText(string[] lines)
     {
         rtbContent.WordWrap = chkWordWrap.Checked = true;
         rtbContent.Lines = lines;
+        ApplyPadding(5);
+    }
+
+    public void LoadFile(string filepath)
+    {
+        rtbContent.Lines = System.Array.Empty<string>();
+        rtbContent.WordWrap = chkWordWrap.Checked = true;
+        if (File.Exists(filepath))
+        {
+            try
+            {
+                if (Path.GetExtension(filepath).Contains(".rtf"))
+                    rtbContent.LoadFile(filepath);
+                else
+                    rtbContent.LoadFile(filepath, RichTextBoxStreamType.PlainText);
+                ApplyPadding(5);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to load {filepath}.{Environment.NewLine}{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        else
+        {
+            var msg = $"Could not load {filepath}";
+            rtbContent.Lines = new string[] { msg };
+            MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     private void LoadPriorSearches()
@@ -44,28 +79,6 @@ public partial class Viewer : Form
         {
             var priorSearches = File.ReadAllLines(_searchFileSource);
             _searchTexts = new List<string>(priorSearches);
-        }
-    }
-
-    public void LoadText(string text)
-    {
-        rtbContent.WordWrap = chkWordWrap.Checked = true;
-        rtbContent.Lines = new string[] { text };
-    }
-
-    public void LoadFile(string filepath)
-    {
-        rtbContent.Lines = System.Array.Empty<string>();
-        rtbContent.WordWrap = chkWordWrap.Checked = true;
-        if (File.Exists(filepath))
-        {
-            rtbContent.LoadFile(filepath);
-        }
-        else
-        {
-            var msg = $"Could not load {filepath}";
-            rtbContent.Lines = new string[] { msg };
-            MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 
