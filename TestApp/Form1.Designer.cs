@@ -29,23 +29,35 @@
         private void InitializeComponent()
         {
             btnClickMe = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnClickMe
             // 
             btnClickMe.Location = new Point(0, 0);
             btnClickMe.Name = "btnClickMe";
-            btnClickMe.Size = new Size(75, 23);
+            btnClickMe.Size = new Size(138, 23);
             btnClickMe.TabIndex = 0;
-            btnClickMe.Text = "Click Me";
+            btnClickMe.Text = "View Static Text";
             btnClickMe.UseVisualStyleBackColor = true;
             btnClickMe.Click += btnClickMe_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(0, 29);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 23);
+            button1.TabIndex = 1;
+            button1.Text = "View FIle";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(btnClickMe);
             Name = "Form1";
             Text = "Form1";
@@ -55,5 +67,6 @@
         #endregion
 
         private Button btnClickMe;
+        private Button button1;
     }
 }
