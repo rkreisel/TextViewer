@@ -2,7 +2,7 @@
 using TextViewer.Utilities;
 using static InputDialog.InputDialog;
 
-namespace Viewer;
+namespace TextViewer;
 
 
 public partial class Viewer : Form

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static InputDialog.InputDialog;
 
-namespace Viewer;
+namespace TextViewer;
 
 partial class Viewer
 {
