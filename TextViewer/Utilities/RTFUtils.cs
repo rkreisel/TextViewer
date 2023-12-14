@@ -1,7 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-namespace Utils;
+﻿namespace TextViewer.Utilities;
 public static class RTFUtils
 {
     /// <summary>
