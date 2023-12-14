@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/rkreisel/TextViewer.git</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<VersionPrefix>2</VersionPrefix>
-	<Version>1.0.2</Version>
+	<Version>1.0.3</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="InputDialog" Version="1.2.8" />
+    <PackageReference Include="InputDialog" Version="1.2.9" />
   </ItemGroup>
 
 </Project>

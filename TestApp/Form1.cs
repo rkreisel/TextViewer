@@ -18,7 +18,7 @@ public partial class Form1 : Form
     {
         if (ofd.ShowDialog() == DialogResult.OK)
         {
-            var viewer = new TextViewer.Viewer("Viewer2");
+            var viewer = new TextViewer.Viewer("Viewer2", @"cmptname\asdfae\33124\xyz");
             viewer.LoadFile(ofd.FileName);
             viewer.Show();
         }
