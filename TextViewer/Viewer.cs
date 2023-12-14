@@ -1,29 +1,36 @@
-﻿using System.Diagnostics;
-using TextViewer.Utilities;
-using static InputDialog.InputDialog;
+﻿namespace TextViewer;
 
-namespace TextViewer;
-
-
+/// <summary>
+/// A class that creates a simple popup window with text (Rich test acceptable)
+/// </summary>
 public partial class Viewer : Form
 {
     private readonly string _Title;
     private string srchTxt = string.Empty;
     private List<string> _searchTexts = new();
     private string _searchFileSource = string.Empty;
-    private readonly string _srchName;
+    private readonly string _srchHistName;
 
+    /// <summary>
+    /// Creates a Text Veiwer popup form.
+    /// </summary>
+    /// <param name="title">The title of the window</param>
+    /// <param name="srchName">Name for the file that will hold the search history. If not overridden, the new window will use a common file for all Text Viewer windows.</param>
     public Viewer(string title = "Text Viewer", string srchName = "TxtVwrSrchHst")
     {
         ArgumentNullException.ThrowIfNull(nameof(title));
         ArgumentNullException.ThrowIfNull(nameof(srchName));
-        _srchName = srchName.RemoveSpecialCharacters();
+        _srchHistName = srchName.RemoveSpecialCharacters();
         InitializeComponent();
-        _srchName = srchName;
+        _srchHistName = srchName;
         _Title = title;
         LoadPriorSearches();
     }
 
+    /// <summary>
+    /// Load the provided string into the viewer.
+    /// </summary>
+    /// <param name="text">The text to show.</param>
     public void LoadText(string text)
     {
         rtbContent.WordWrap = chkWordWrap.Checked = true;
@@ -31,6 +38,10 @@ public partial class Viewer : Form
         ApplyPadding(5);
     }
 
+    /// <summary>
+    /// Loads the provided array of strings into the viweer.
+    /// </summary>
+    /// <param name="lines"></param>
     public void LoadText(string[] lines)
     {
         rtbContent.WordWrap = chkWordWrap.Checked = true;
@@ -38,6 +49,11 @@ public partial class Viewer : Form
         ApplyPadding(5);
     }
 
+    /// <summary>
+    /// Reads the specified ans attempts to load it into the viewer.
+    /// Note that only text files ar valid.
+    /// </summary>
+    /// <param name="filepath">A valid file path.</param>
     public void LoadFile(string filepath)
     {
         rtbContent.Lines = System.Array.Empty<string>();
@@ -69,7 +85,7 @@ public partial class Viewer : Form
     {
         var appname = Process.GetCurrentProcess().ProcessName;
         var programDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-        _searchFileSource = @$"{programDataFolder}\HotRS\TextViewer\{appname}\SearchHist-{_srchName}.txt";
+        _searchFileSource = @$"{programDataFolder}\HotRS\TextViewer\{appname}\SearchHist-{_srchHistName}.txt";
         if (File.Exists(_searchFileSource))
         {
             var priorSearches = File.ReadAllLines(_searchFileSource);
@@ -77,6 +93,10 @@ public partial class Viewer : Form
         }
     }
 
+    /// <summary>
+    /// Applies the specified spacing to the left and right of the text in the viewer window.
+    /// </summary>
+    /// <param name="width">The number of pixels to add.</param>
     public void ApplyPadding(int width)
     {
         rtbContent.SelectAll();

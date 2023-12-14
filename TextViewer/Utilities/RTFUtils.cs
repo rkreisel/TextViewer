@@ -1,4 +1,8 @@
 ﻿namespace TextViewer.Utilities;
+
+/// <summary>
+/// A class containing utilities for workign with Rich Text Files.
+/// </summary>
 public static class RTFUtils
 {
     /// <summary>
@@ -47,6 +51,12 @@ public static class RTFUtils
         }
     }
 
+    /// <summary>
+    /// Get the row and column of the first selected character.
+    /// </summary>
+    /// <typeparam name="T">Must be a RichTextBox</typeparam>
+    /// <param name="rtb">An instance of a RichTextBox</param>
+    /// <returns></returns>
     public static Point RowColumn<T>(this T rtb) where T : RichTextBox
     {
         rtb.CheckForNull(nameof(rtb));
@@ -60,6 +70,12 @@ public static class RTFUtils
         return new Point(line, column);
     }
 
+    /// <summary>
+    /// Sets the row and column in the title of the window
+    /// </summary>
+    /// <param name="form">Must be a Form object.</param>
+    /// <param name="title">The title to set.</param>
+    /// <param name="rtb">The RichTextBox from which to extact the selected text.</param>
     public static void SetRCInTitle(this Form form, string title, RichTextBox rtb)
     {
         form.CheckForNull(nameof(form));
@@ -68,6 +84,12 @@ public static class RTFUtils
         form.Text = $"{title} ({lc.X},{lc.Y})";
     }
 
+    /// <summary>
+    /// Handle for setting the cursor in a RichTextBox
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="rtb"></param>
+    /// <param name="e"><cref>MouseEventArgs</cref></param>
     public static void SetCursor<T>(this T rtb, MouseEventArgs e) where T : RichTextBox
     {
         rtb.CheckForNull(nameof(rtb));
@@ -82,6 +104,12 @@ public static class RTFUtils
     }
 
 #pragma warning disable IDE0060 // Remove unused parameter
+    /// <summary>
+    /// Opens a URL in the default browser.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="rtb"></param>
+    /// <param name="e"></param>
     public static void OpenLink<T>(this T rtb, LinkClickedEventArgs e) where T : RichTextBox
 #pragma warning restore IDE0060 // Remove unused parameter
     {
