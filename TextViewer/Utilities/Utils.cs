@@ -1,4 +1,4 @@
-﻿namespace Utils;
+﻿namespace TextViewer.Utilities;
 
 public static class Utils
 {

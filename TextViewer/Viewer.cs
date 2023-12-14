@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Utils;
+using TextViewer.Utilities;
 using static InputDialog.InputDialog;
 
 namespace Viewer;
