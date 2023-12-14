@@ -9,7 +9,7 @@ public partial class Form1 : Form
 
     private void btnClickMe_Click(object sender, EventArgs e)
     {
-        var viewer = new Viewer.Viewer("Viewer1");
+        var viewer = new TextViewer.Viewer("Viewer1");
         viewer.LoadText("This is some text");
         viewer.Show();
     }
@@ -18,7 +18,7 @@ public partial class Form1 : Form
     {
         if (ofd.ShowDialog() == DialogResult.OK)
         {
-            var viewer = new Viewer.Viewer("Viewer2");
+            var viewer = new TextViewer.Viewer("Viewer2");
             viewer.LoadFile(ofd.FileName);
             viewer.Show();
         }
