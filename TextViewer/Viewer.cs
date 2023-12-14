@@ -16,16 +16,18 @@ namespace Viewer;
 
 public partial class Viewer : Form
 {
-    private string _Title;
+    private readonly string _Title;
     private string srchTxt = string.Empty;
     private List<string> _searchTexts = new();
-    private string _searchFileSource;
-    private string _srchName;
+    private string _searchFileSource = string.Empty;
+    private readonly string _srchName;
 
     public Viewer(string srchName = "TxtVwrSrchHst")
     {
+        ArgumentNullException.ThrowIfNull(nameof(srchName));
         InitializeComponent();
         _srchName = srchName;
+        _Title = srchName;
         LoadPriorSearches();
     }
 
@@ -74,7 +76,7 @@ public partial class Viewer : Form
     {
         var appname = Process.GetCurrentProcess().ProcessName;
         var programDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-        _searchFileSource = @$"{programDataFolder}\TextViewer\{appname}\ViewerSearches-{_srchName}.txt";
+        _searchFileSource = @$"{programDataFolder}\HotRS\TextViewer\{appname}\ViewerSearches-{_srchName}.txt";
         if (File.Exists(_searchFileSource))
         {
             var priorSearches = File.ReadAllLines(_searchFileSource);
@@ -131,9 +133,12 @@ public partial class Viewer : Form
         }
     }
 
-    private void EnsureFolder(string filename)
+    private static void EnsureFolder(string filename)
     { 
+        ArgumentNullException.ThrowIfNull(nameof(filename));
         var path = Path.GetDirectoryName(filename);
+        if (string.IsNullOrEmpty(path))
+            throw new ArgumentException("Could not generate file to store searches. Filename was null or empty.");
         if (!Directory.Exists(path))
         {
             Directory.CreateDirectory(path);
@@ -146,8 +151,15 @@ public partial class Viewer : Form
 
     private void rtbContent_SelectionChanged(object sender, System.EventArgs e)
     {
-        var position = GetTextBoxPosition(sender as RichTextBox);
-        Text = $"{_Title} ({position.X}, {position.Y})";
+        if (sender is RichTextBox sndr)
+        {
+            var position = GetTextBoxPosition(sndr);
+            Text = $"{_Title} ({position.X}, {position.Y})";
+        }
+        else
+        {
+            throw new ApplicationException("Internal Error: Email the developer." );
+        }    
     }
     private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
     {
