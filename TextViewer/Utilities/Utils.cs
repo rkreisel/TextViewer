@@ -1,4 +1,7 @@
-﻿namespace TextViewer.Utilities;
+﻿using System.Text;
+using System.Text.RegularExpressions;
+
+namespace TextViewer.Utilities;
 
 public static class Utils
 {
@@ -34,5 +37,19 @@ public static class Utils
         else
             return source;
 
+    }
+
+    public static string RemoveSpecialCharacters(this string str)
+    {
+        return Regex.Replace(str, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
+        //StringBuilder sb = new StringBuilder();
+        //foreach (char c in str)
+        //{
+        //    if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+        //    {
+        //        sb.Append(c);
+        //    }
+        //}
+        //return sb.ToString();
     }
 }

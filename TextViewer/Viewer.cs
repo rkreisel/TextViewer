@@ -13,12 +13,14 @@ public partial class Viewer : Form
     private string _searchFileSource = string.Empty;
     private readonly string _srchName;
 
-    public Viewer(string srchName = "TxtVwrSrchHst")
+    public Viewer(string title = "Text Viewer", string srchName = "TxtVwrSrchHst")
     {
+        ArgumentNullException.ThrowIfNull(nameof(title));
         ArgumentNullException.ThrowIfNull(nameof(srchName));
+        _srchName = srchName.RemoveSpecialCharacters();
         InitializeComponent();
         _srchName = srchName;
-        _Title = srchName;
+        _Title = title;
         LoadPriorSearches();
     }
 
