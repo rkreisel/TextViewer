@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="tv.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="tv.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TextViewer\TextViewer.csproj" />
   </ItemGroup>
 

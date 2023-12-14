@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnClickMe = new Button();
             btnViewFile = new Button();
             ofd = new OpenFileDialog();
@@ -70,6 +71,7 @@
             Controls.Add(btnViewFile);
             Controls.Add(btnClickMe);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "Viewer";

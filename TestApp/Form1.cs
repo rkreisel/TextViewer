@@ -20,7 +20,7 @@ namespace TestApp
             {
                 var viewer = new Viewer.Viewer("Viewer2");
                 viewer.LoadFile(ofd.FileName);
-                viewer.Show();
+                viewer.Show(); 
             }
         }
     }

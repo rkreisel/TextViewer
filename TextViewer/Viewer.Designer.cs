@@ -34,6 +34,7 @@ partial class Viewer
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Viewer));
         splitContainer1 = new SplitContainer();
         btnSearch = new Button();
         chkWordWrap = new CheckBox();
@@ -112,6 +113,7 @@ partial class Viewer
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
         Controls.Add(splitContainer1);
+        Icon = (Icon)resources.GetObject("$this.Icon");
         KeyPreview = true;
         Name = "Viewer";
         Text = "Log Viewer";

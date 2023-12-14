@@ -13,7 +13,16 @@
     <PackageProjectUrl>https://github.com/rkreisel/TextViewer</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/rkreisel/TextViewer.git</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="tv.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="tv.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
