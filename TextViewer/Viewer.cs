@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 using Utils;
 using static InputDialog.InputDialog;
 
@@ -76,7 +67,7 @@ public partial class Viewer : Form
     {
         var appname = Process.GetCurrentProcess().ProcessName;
         var programDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-        _searchFileSource = @$"{programDataFolder}\HotRS\TextViewer\{appname}\ViewerSearches-{_srchName}.txt";
+        _searchFileSource = @$"{programDataFolder}\HotRS\TextViewer\{appname}\SearchHist-{_srchName}.txt";
         if (File.Exists(_searchFileSource))
         {
             var priorSearches = File.ReadAllLines(_searchFileSource);
@@ -134,7 +125,7 @@ public partial class Viewer : Form
     }
 
     private static void EnsureFolder(string filename)
-    { 
+    {
         ArgumentNullException.ThrowIfNull(nameof(filename));
         var path = Path.GetDirectoryName(filename);
         if (string.IsNullOrEmpty(path))
@@ -158,8 +149,8 @@ public partial class Viewer : Form
         }
         else
         {
-            throw new ApplicationException("Internal Error: Email the developer." );
-        }    
+            throw new ApplicationException("Internal Error: Email the developer.");
+        }
     }
     private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
     {

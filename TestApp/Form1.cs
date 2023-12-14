@@ -20,7 +20,7 @@ public partial class Form1 : Form
         {
             var viewer = new Viewer.Viewer("Viewer2");
             viewer.LoadFile(ofd.FileName);
-            viewer.Show(); 
+            viewer.Show();
         }
     }
 }

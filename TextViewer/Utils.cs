@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Utils;
+﻿namespace Utils;
 
 public static class Utils
 {
@@ -11,7 +9,7 @@ public static class Utils
             throw new ArgumentNullException(paramName);
         }
     }
-   
+
     public static bool IsNumeric(this string source) =>
         int.TryParse(source, out _);
 
