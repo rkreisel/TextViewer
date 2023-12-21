@@ -16,7 +16,7 @@ Version 1.0.4 adds XML comments.</Description>
     <RepositoryUrl>https://github.com/rkreisel/TextViewer.git</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<VersionPrefix>2</VersionPrefix>
-	<Version>1.0.4</Version>
+	<Version>1.0.5</Version>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
