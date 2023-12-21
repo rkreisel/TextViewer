@@ -22,7 +22,6 @@ public partial class Viewer : Form
         ArgumentNullException.ThrowIfNull(nameof(srchName));
         _srchHistName = srchName.RemoveSpecialCharacters();
         InitializeComponent();
-        _srchHistName = srchName;
         _Title = title;
         LoadPriorSearches();
     }
