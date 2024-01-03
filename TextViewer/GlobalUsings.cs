@@ -6,4 +6,4 @@ global using System.Threading.Tasks;
 global using System.Text.RegularExpressions;
 global using System.Diagnostics;
 global using TextViewer.Utilities;
-global using static InputDialog.InputDialog;
+global using InputDialog;
