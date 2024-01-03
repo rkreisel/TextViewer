@@ -24,6 +24,7 @@ public partial class Viewer : Form
         InitializeComponent();
         _Title = title;
         LoadPriorSearches();
+        this.btnSearch.Click += btnSearch_Click;
     }
 
     /// <summary>
@@ -31,7 +32,7 @@ public partial class Viewer : Form
     /// </summary>
     /// <param name="text">The text to show.</param>
     public void LoadText(string text)
-    {
+    {        
         rtbContent.WordWrap = chkWordWrap.Checked = true;
         rtbContent.Lines = new string[] { text };
         ApplyPadding(5);
@@ -156,7 +157,7 @@ public partial class Viewer : Form
             Directory.CreateDirectory(path);
         }
     }
-    private void chkWordWrap_CheckedChanged(object sender, System.EventArgs e)
+    private void chkWordWrap_CheckedChanged(object? sender, System.EventArgs e)
     {
         rtbContent.WordWrap = chkWordWrap.Checked;
     }
