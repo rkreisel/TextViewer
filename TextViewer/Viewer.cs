@@ -157,7 +157,7 @@ public partial class Viewer : Form
             Directory.CreateDirectory(path);
         }
     }
-    private void chkWordWrap_CheckedChanged(object sender, System.EventArgs e)
+    private void chkWordWrap_CheckedChanged(object? sender, System.EventArgs e)
     {
         rtbContent.WordWrap = chkWordWrap.Checked;
     }
